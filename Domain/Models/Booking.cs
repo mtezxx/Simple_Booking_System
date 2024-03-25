@@ -10,6 +10,7 @@ public class Booking
     public DateOnly DateTo { get; set; }
     public int BookedQuantity { get; set; }
     public int ResourceId { get; set; }
+    public Resource Resource { get; set; }
     
     public Booking(DateOnly dateFrom, DateOnly dateTo, int bookedQuantity, int resourceId)
     {
