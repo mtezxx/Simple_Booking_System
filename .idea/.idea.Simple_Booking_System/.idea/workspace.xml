@@ -13,20 +13,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b454f4d6-991d-4e59-97ba-79dcb649fc49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/DaoInterfaces/IBookingDao.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Logic/BookingLogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/LogicInterfaces/IBookingLogic.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Shared/BookingHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/DTOs/BookingCreationDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/DTOs/BookingResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EfcDataAccess/DAOs/BookingEfcDao.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebAPI/Controllers/BookingsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blazor/Pages/AddResource.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/DTOs/ResourceParametersDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IBookingService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IResourceService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpClients/Implementations/BookingHttpClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpClients/Implementations/ResourceHttpClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/DaoInterfaces/IResourceDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DaoInterfaces/IResourceDao.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Logic/ResourceLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Logic/ResourceLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/LogicInterfaces/IResourceLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/LogicInterfaces/IResourceLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Blazor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Blazor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EfcDataAccess/DAOs/ResourceEfcDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/DAOs/ResourceEfcDao.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpClients/HttpClients.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/HttpClients.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/ResourcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/ResourcesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +57,7 @@
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.Blazor: http.executor&quot;: &quot;Run&quot;,
     &quot;.NET Launch Settings Profile.WebAPI: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.WebAPI: https.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -69,7 +76,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.WebAPI: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Blazor: http">
     <configuration name="Blazor: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Blazor/Blazor.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -130,10 +137,10 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="WebAPI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+    <configuration name="WebAPI: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WebAPI/WebAPI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="http" />
+      <option name="LAUNCH_PROFILE_NAME" value="https" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -174,6 +181,8 @@
       <workItem from="1711453538660" duration="2208000" />
       <workItem from="1711455916599" duration="2560000" />
       <workItem from="1711459171549" duration="3822000" />
+      <workItem from="1711464878983" duration="6941000" />
+      <workItem from="1711472113757" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="Domain">
       <option name="closed" value="true" />

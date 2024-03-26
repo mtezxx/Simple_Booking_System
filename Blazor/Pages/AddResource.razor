@@ -1,0 +1,50 @@
+@page "/AddResource"
+@using HttpClients.ClientInterfaces
+@using global::Shared.DTOs
+@inject IResourceService resourceService;
+
+<div class="card">
+    <h3>Create Resource</h3>
+    <div class="form-group field">
+        <label>Name of the resource:</label>
+        <input type="text" @bind="name" @bind:event="oninput"/>
+    </div>
+    <div class="form-group field"> <!-- Quantity input field added here -->
+        <label>Quantity:</label>
+        <input type="number" @bind="quantity" @bind:event="oninput" min="1"/> <!-- Ensure that the input is a number and minimum is 1 -->
+    </div>
+    @if (!string.IsNullOrEmpty(resultMsg))
+    {
+        <label style="color: @color">@resultMsg</label>
+    }
+    <div class="button-row">
+        <button @onclick="CreateResource" disabled="@(string.IsNullOrEmpty(name) || quantity <= 0)" class="acceptbtn">Create</button>
+    </div>
+</div>
+
+@code {
+    private string name;
+    private int quantity;
+    private string resultMsg = "";
+    private string color = "";
+
+    private async Task CreateResource()
+    {
+        resultMsg = "";
+
+        try
+        {
+            await resourceService.CreateAsync(new ResourceCreationDto(name, quantity));
+            name = "";
+            quantity = 0;
+            resultMsg = "Resource successfully created"; // Corrected "User" to "Resource"
+            color = "green";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            resultMsg = e.Message;
+            color = "red";
+        }
+    }
+}

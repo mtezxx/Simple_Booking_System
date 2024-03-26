@@ -1,0 +1,66 @@
+@page "/ViewBooking"
+@using HttpClients.ClientInterfaces
+@using global::Shared.Models
+@using global::Shared.DTOs
+@inject IResourceService ResourceService
+
+<h3>View Resources</h3>
+
+@if (resources == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity Available</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var resource in resources)
+        {
+            <tr>
+                <td>@resource.Name</td>
+                <td>@resource.Quantity</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="() => BookResource(resource.Id)">Book</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private ICollection<Resource> resources;
+    private string name;
+    private int quantity;
+    private string resultMsg = "";
+    private string color = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            resources = await ResourceService.GetAsync(new ResourceParametersDto(name, quantity));
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching resources: {ex.Message}");
+            // Optionally set an error message to display to the user
+        }
+    }
+
+
+    private async Task BookResource(int resourceId)
+    {
+        // Logic to book the resource.
+        // You might want to redirect to a booking page or open a dialog here.
+        Console.WriteLine($"Booking resource with ID: {resourceId}");
+        // Optionally refresh resources or navigate after booking.
+    }
+}

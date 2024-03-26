@@ -1,3 +1,4 @@
+using System.Collections;
 using Application.LogicInterfaces;
 using Microsoft.AspNetCore.Mvc;
 using Shared.DTOs;
@@ -23,6 +24,22 @@ public class ResourcesController :ControllerBase
         {
             Resource resource = await resourceLogic.CreateAsync(dto);
             return Created($"/resources/{resource.Id}", resource);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+    [HttpGet]
+    public async Task<ActionResult<ICollection>> GetAsync([FromQuery] string? name, [FromQuery] int? quantity)
+    {
+        try
+        {
+            ResourceParametersDto parameters = new(name, quantity);
+            ICollection resources = await resourceLogic.GetAsync(parameters);
+            return Ok(resources);
         }
         catch (Exception e)
         {

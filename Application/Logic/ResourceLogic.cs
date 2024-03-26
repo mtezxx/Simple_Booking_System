@@ -1,3 +1,4 @@
+using System.Collections;
 using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Shared.DTOs;
@@ -33,7 +34,12 @@ public class ResourceLogic : IResourceLogic
         
         return created;
     }
-    
+
+    public Task<ICollection> GetAsync(ResourceParametersDto searchParameters)
+    {
+        return resourceDao.GetAsync(searchParameters);
+    }
+
     public static void ValidateData(ResourceCreationDto resourceToCreate)
     {
         string name = resourceToCreate.Name;
