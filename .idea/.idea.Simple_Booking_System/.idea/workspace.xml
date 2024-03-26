@@ -13,11 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b454f4d6-991d-4e59-97ba-79dcb649fc49" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IResourceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IResourceService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/Implementations/ResourceHttpClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/Implementations/ResourceHttpClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +26,23 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mtezxx"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1614ea25-f211-4d3c-b9bf-77b3631c5a6d" />
+        <option name="url" value="https://github.com/mtezxx/Simple_Booking_System.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/mkuku/RiderProjects/Simple_Booking_System/Blazor/Pages/ViewBooking.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -168,6 +185,8 @@
       <workItem from="1711464878983" duration="6941000" />
       <workItem from="1711472113757" duration="429000" />
       <workItem from="1711472740746" duration="619000" />
+      <workItem from="1711474905987" duration="10170000" />
+      <workItem from="1711489137562" duration="657000" />
     </task>
     <task id="LOCAL-00001" summary="Domain">
       <option name="closed" value="true" />
