@@ -15,6 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BookingContext>();
 builder.Services.AddScoped<IResourceLogic, ResourceLogic>();
 builder.Services.AddScoped<IResourceDao, ResourceEfcDao>();
+builder.Services.AddScoped<IBookingLogic, BookingLogic>();
+builder.Services.AddScoped<IBookingDao, BookingEfcDao>();
+
 
 var app = builder.Build();
 

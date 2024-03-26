@@ -13,23 +13,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b454f4d6-991d-4e59-97ba-79dcb649fc49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/EfcDataAccess/BookingContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EfcDataAccess/DAOs/ResourceEfcDao.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebAPI/Controllers/ResourcesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/DaoInterfaces/IBookingDao.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Logic/BookingLogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/LogicInterfaces/IBookingLogic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Shared/BookingHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/DTOs/BookingCreationDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/DTOs/BookingResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EfcDataAccess/DAOs/BookingEfcDao.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebAPI/Controllers/BookingsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/DaoInterfaces/IResourceDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DaoInterfaces/IResourceDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Logic/ResourceLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Logic/ResourceLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Models/Booking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Models/Booking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Models/Resource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Models/Resource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EfcDataAccess/EfcDataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/EfcDataAccess.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/Class1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/HttpClients.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/HttpClients.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EfcDataAccess/DAOs/ResourceEfcDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/DAOs/ResourceEfcDao.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +173,7 @@
       <workItem from="1711383254255" duration="2387000" />
       <workItem from="1711453538660" duration="2208000" />
       <workItem from="1711455916599" duration="2560000" />
+      <workItem from="1711459171549" duration="3822000" />
     </task>
     <task id="LOCAL-00001" summary="Domain">
       <option name="closed" value="true" />

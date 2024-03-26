@@ -27,4 +27,10 @@ public class ResourceEfcDao : IResourceDao
             (r => r.Name.ToLower().Equals(name.ToLower()));
         return existing;
     }
+
+    public async Task<Resource?> GetResourceByIdAsync(int id)
+    {
+        Resource? resource= await context.Resources.FindAsync(id);
+        return resource;
+    }
 }
