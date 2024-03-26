@@ -17,7 +17,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/DTOs/BookingCreationDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/DTOs/BookingCreationDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db-wal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +28,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "mtezxx"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mtezxx&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -187,6 +188,8 @@
       <workItem from="1711472740746" duration="619000" />
       <workItem from="1711474905987" duration="10170000" />
       <workItem from="1711489137562" duration="657000" />
+      <workItem from="1711490364698" duration="413000" />
+      <workItem from="1711490791048" duration="273000" />
     </task>
     <task id="LOCAL-00001" summary="Domain">
       <option name="closed" value="true" />

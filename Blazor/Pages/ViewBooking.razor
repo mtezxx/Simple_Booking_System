@@ -3,6 +3,7 @@
 @using global::Shared.Models
 @using global::Shared.DTOs
 @inject IResourceService ResourceService
+@inject IBookingService BookingService
 
 <h3>View Resources</h3>
 
@@ -66,11 +67,15 @@ else
 
 @code {
     private ICollection<Resource> resources;
+    private ICollection<Booking> bookings;
     private bool isModalOpen = false;
-    private DateTime startDate = DateTime.Today;
-    private DateTime endDate = DateTime.Today.AddDays(1);
+    private DateOnly startDate = DateOnly.FromDateTime(DateTime.Today);
+    private DateOnly endDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1));
     private int quantity = 1;
     private int selectedResourceId;
+    private string resultMsg = "";
+    private string color = "";
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -97,10 +102,25 @@ else
 
     private async Task ConfirmBooking()
     {
-        Console.WriteLine($"Booking resource with ID: {selectedResourceId} - Start Date: {startDate}, End Date: {endDate}, Quantity: {quantity}");
-        // Implement the booking logic here, such as calling an API to save the booking.
+        resultMsg = "";
+
+        try
+        {
+            await BookingService.BookResourceAsync(new BookingCreationDto(
+                startDate,
+                endDate,
+                quantity,
+                selectedResourceId
+            ));
+            Console.WriteLine($"Booking resource with ID: {selectedResourceId} - Start Date: {startDate}, End Date: {endDate}, Quantity: {quantity}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
 
         CloseModal();
-        // Optionally refresh the resource list or handle post-booking logic here.
+        resultMsg = "Booking successful!";
     }
 }
