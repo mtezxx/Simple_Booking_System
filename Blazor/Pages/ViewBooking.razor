@@ -46,7 +46,7 @@ else
     {
         try
         {
-            resources = await ResourceService.GetAsync(new ResourceParametersDto(name, quantity));
+            resources = await ResourceService.GetAsync();
         }
         catch (Exception ex)
         {

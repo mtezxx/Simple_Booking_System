@@ -32,11 +32,20 @@ public class ResourceHttpClient : IResourceService
         return resource;
     }
 
-    public async Task<List<Resource>> GetAsync(ResourceParametersDto searchParameters)
+    public async Task<ICollection<Resource>> GetAsync(string? name = null, int? quantity = null)
     {
-        string query = ConstructQuery(searchParameters.Name, searchParameters.Quantity);
+        string uri = "/resources";
+        if (!string.IsNullOrEmpty(name))
+        {
+            uri += $"?name={name}";
+        }
+            
+        if (quantity.HasValue)
+        {
+            uri += string.IsNullOrEmpty(name) ? $"?quantity={quantity}" : $"&quantity={quantity}";
+        }
 
-        HttpResponseMessage response = await client.GetAsync("/resources"+query);
+        HttpResponseMessage response = await client.GetAsync(uri);
         string content = await response.Content.ReadAsStringAsync();
         if (!response.IsSuccessStatusCode)
         {
@@ -47,23 +56,7 @@ public class ResourceHttpClient : IResourceService
         {
             PropertyNameCaseInsensitive = true
         })!;
-        return (List<Resource>)resources;
+        return resources;
     }
     
-    
-    private static string ConstructQuery(string? name, int? quantity)
-    {
-        string query = "";
-        if (!string.IsNullOrEmpty(name))
-        {
-            query += $"?name={name}";
-        }
-
-        if (quantity != null)
-        {
-            query += string.IsNullOrEmpty(query) ? "?" : "&";
-            query += $"quantity={quantity}";
-        }
-        return query;
-    }
-}   
+}

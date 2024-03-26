@@ -13,27 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b454f4d6-991d-4e59-97ba-79dcb649fc49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/AddResource.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/DTOs/ResourceParametersDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IBookingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IResourceService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HttpClients/Implementations/BookingHttpClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HttpClients/Implementations/ResourceHttpClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/DaoInterfaces/IResourceDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/DaoInterfaces/IResourceDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Logic/ResourceLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Logic/ResourceLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/LogicInterfaces/IResourceLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/LogicInterfaces/IResourceLogic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Blazor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Blazor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EfcDataAccess/DAOs/ResourceEfcDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/DAOs/ResourceEfcDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpClients/HttpClients.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/HttpClients.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Controllers/ResourcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Controllers/ResourcesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IResourceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/ClientInterfaces/IResourceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpClients/Implementations/ResourceHttpClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpClients/Implementations/ResourceHttpClient.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +167,7 @@
       <workItem from="1711459171549" duration="3822000" />
       <workItem from="1711464878983" duration="6941000" />
       <workItem from="1711472113757" duration="429000" />
+      <workItem from="1711472740746" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="Domain">
       <option name="closed" value="true" />

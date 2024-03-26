@@ -6,6 +6,6 @@ namespace HttpClients.ClientInterfaces;
 public interface IResourceService
 {
     Task<Resource> CreateAsync(ResourceCreationDto resourceToCreate);
-    Task<List<Resource>> GetAsync(ResourceParametersDto searchParameters);
+    Task<ICollection<Resource>> GetAsync(string? name = null, int? quantity = null);
     
 }
