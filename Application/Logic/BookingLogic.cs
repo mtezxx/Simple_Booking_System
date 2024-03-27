@@ -18,58 +18,62 @@ namespace Application.Logic
         {
             this.bookingDao = bookingDao;
             this.resourceDao = resourceDao;
-        }
-            
-        public async Task<BookingResponseDto> BookResourceAsync(BookingCreationDto bookingToCreate)
-        {
-            ValidateData(bookingToCreate);
+        } 
+        
+    public async Task<BookingResponseDto> BookResourceAsync(BookingCreationDto bookingToCreate)
+    {
+    ValidateData(bookingToCreate);
 
-            // Check if the resource exists
-            var resource = await resourceDao.GetResourceByIdAsync(bookingToCreate.ResourceId);
-            if (resource == null)
-            {
-                throw new Exception("Resource is not available.");
-            }
+    // Check if the resource exists
+    var resource = await resourceDao.GetResourceByIdAsync(bookingToCreate.ResourceId);
+    if (resource == null)
+    {
+        throw new Exception("Resource is not available.");
+    }
 
-            // Fetch existing bookings for the resource that overlap with the requested booking period
-            var existingBookings = await bookingDao.GetBookingsByResourceIdAsync(bookingToCreate.ResourceId);
-            int bookedQuantityDuringPeriod = existingBookings
-                .Where(b => !(b.DateFrom > bookingToCreate.DateTo || b.DateTo < bookingToCreate.DateFrom))
-                .Sum(b => b.BookedQuantity);
+    // Fetch existing bookings for the resource that overlap with the requested booking period and materialize it to a List
+    var existingBookings = (await bookingDao.GetBookingsByResourceIdAsync(bookingToCreate.ResourceId)).ToList();
+    
+    // Calculate the booked quantity during the requested period
+    int bookedQuantityDuringPeriod = existingBookings
+        .Where(b => !(b.DateFrom > bookingToCreate.DateTo || b.DateTo < bookingToCreate.DateFrom))
+        .Sum(b => b.BookedQuantity);
 
-            // Calculate the available quantity during the requested period
-            int availableQuantityDuringPeriod = resource.Quantity - bookedQuantityDuringPeriod;
+    // Calculate the available quantity during the requested period
+    int availableQuantityDuringPeriod = resource.Quantity - bookedQuantityDuringPeriod;
 
-            // If the requested quantity exceeds the available quantity, throw an exception
-            if (bookingToCreate.BookedQuantity > availableQuantityDuringPeriod)
-            {
-                throw new Exception("Requested quantity exceeds available quantity for the specified period.");
-            }
+    // If the requested quantity exceeds the available quantity, throw an exception
+    if (bookingToCreate.BookedQuantity > availableQuantityDuringPeriod)
+    {
+        throw new Exception("Requested quantity exceeds available quantity for the specified period.");
+    }
 
-            // Check for booking conflicts (this seems redundant with the above checks, unless there are other conflict criteria)
-            if (BookingHelper.IsConflict(existingBookings, bookingToCreate.DateFrom, bookingToCreate.DateTo))
-            {
-                throw new Exception("Resource is already booked for the requested period.");
-            }
+    // Check for booking conflicts considering the booked quantity and resource quantity
+    if (BookingHelper.IsConflict(existingBookings, bookingToCreate.DateFrom, bookingToCreate.DateTo, bookedQuantityDuringPeriod, resource.Quantity))
+    {
+        throw new Exception("Resource is already booked for the requested period.");
+    }
 
-            // Proceed with creating the booking
-            Booking toCreate = new Booking
-            {
-                ResourceId = bookingToCreate.ResourceId,
-                BookedQuantity = bookingToCreate.BookedQuantity,
-                DateFrom = bookingToCreate.DateFrom,
-                DateTo = bookingToCreate.DateTo
-            };
+    // Proceed with creating the booking
+    Booking toCreate = new Booking
+    {
+        ResourceId = bookingToCreate.ResourceId,
+        BookedQuantity = bookingToCreate.BookedQuantity,
+        DateFrom = bookingToCreate.DateFrom,
+        DateTo = bookingToCreate.DateTo
+    };
 
-            Booking created = await bookingDao.BookResourceAsync(toCreate);
+    Booking created = await bookingDao.BookResourceAsync(toCreate);
 
-            return new BookingResponseDto
-            {
-                Success = true,
-                Message = "Booking successful.",
-                BookingId = created.Id
-            };
-        }
+    return new BookingResponseDto
+    {
+        Success = true,
+        Message = "Booking successful.",
+        BookingId = created.Id
+    };
+}
+
+
         
         public static void ValidateData(BookingCreationDto bookingToCreate)
         {

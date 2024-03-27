@@ -13,14 +13,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b454f4d6-991d-4e59-97ba-79dcb649fc49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Blazor/UIComponents/Modal.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/UIComponents/Modal.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blazor/Pages/AddResource.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Logic/BookingLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Logic/BookingLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Shared/BookingHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Shared/BookingHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Data/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Data/WeatherForecastService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Pages/Counter.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Pages/FetchData.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,30 +71,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Blazor: http.executor": "Run",
-    ".NET Launch Settings Profile.WebAPI: http.executor": "Run",
-    ".NET Launch Settings Profile.WebAPI: https.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Blazor: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.WebAPI: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.WebAPI: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\mkuku\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\mkuku\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\mkuku\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\mkuku\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\mkuku\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\mkuku\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Blazor: http">
     <configuration name="Blazor: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Blazor/Blazor.csproj" />
@@ -201,6 +208,7 @@
       <workItem from="1711490364698" duration="413000" />
       <workItem from="1711490791048" duration="273000" />
       <workItem from="1711529019675" duration="5911000" />
+      <workItem from="1711536814181" duration="2328000" />
     </task>
     <task id="LOCAL-00001" summary="Domain">
       <option name="closed" value="true" />
