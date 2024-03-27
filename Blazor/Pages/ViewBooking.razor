@@ -4,6 +4,9 @@
 @using global::Shared.DTOs
 @inject IResourceService ResourceService
 @inject IBookingService BookingService
+@using Blazor.UIComponents
+@using HostingEnvironmentExtensions = Microsoft.Extensions.Hosting.HostingEnvironmentExtensions
+@inject NavigationManager navMgr;
 
 <h3>View Resources</h3>
 
@@ -41,29 +44,46 @@ else
     <div class="modal-backdrop" style="background-color: rgba(0,0,0,0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 1000;">
         <div class="modal-content" style="background-color: white; padding: 20px; border-radius: 5px; width: 500px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
             <div class="modal-header">
-                <h5 class="modal-title">Book Resource</h5>
+                <h5 class="modal-title">@(!showModal ? "Book Resource" : "Booking Confirmation")</h5>
                 <button class="btn btn-secondary" @onclick="CloseModal">Close</button>
             </div>
             <div class="modal-body">
-                <EditForm Model="this">
-                    <div class="form-group">
-                        <label for="startDate">Start Date:</label>
-                        <input type="date" class="form-control" @bind="startDate" />
-                
-                        <label for="endDate">End Date:</label>
-                        <input type="date" class="form-control" @bind="endDate" />
-                
-                        <label for="quantity">Quantity:</label>
-                        <input type="number" class="form-control" @bind="quantity" />
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" @onclick="ConfirmBooking">Confirm Booking</button>
-                    </div>
-                </EditForm>
+                @if (!showModal)
+                {
+                    <EditForm Model="this">
+                        <div class="form-group">
+                            <label for="startDate">Start Date:</label>
+                            <input type="date" class="form-control" @bind="startDate" />
+                    
+                            <label for="endDate">End Date:</label>
+                            <input type="date" class="form-control" @bind="endDate" />
+                    
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" class="form-control" @bind="quantity" />
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" @onclick="ConfirmBooking">Confirm Booking</button>
+                        </div>
+                    </EditForm>
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(resultMsg))
+                    {
+                        <p style="color: black">You have successfully booked resource!</p>
+                        <button class="btn btn-primary" @onclick="Proceed">Okay</button>
+                    }
+                    else
+                    {
+                        <p style="color: red">@resultMsg</p>
+                        <button class="btn btn-secondary" @onclick="CloseModal">Close</button>
+                    }
+                }
             </div>
         </div>
     </div>
 }
+
 
 @code {
     private ICollection<Resource> resources;
@@ -73,8 +93,9 @@ else
     private DateOnly endDate = DateOnly.FromDateTime(DateTime.Today.AddDays(1));
     private int quantity = 1;
     private int selectedResourceId;
-    private string resultMsg = "";
     private string color = "";
+    private bool showModal = false;
+    private string resultMsg = "";
 
 
     protected override async Task OnInitializedAsync()
@@ -98,12 +119,11 @@ else
     private void CloseModal()
     {
         isModalOpen = false;
+        navMgr.NavigateTo("/ViewBooking", forceLoad: true);
     }
 
     private async Task ConfirmBooking()
     {
-        resultMsg = "";
-
         try
         {
             await BookingService.BookResourceAsync(new BookingCreationDto(
@@ -112,15 +132,20 @@ else
                 quantity,
                 selectedResourceId
             ));
-            Console.WriteLine($"Booking resource with ID: {selectedResourceId} - Start Date: {startDate}, End Date: {endDate}, Quantity: {quantity}");
+            Console.WriteLine($"EMAIL SENT TO admin@admin.com FOR CREATED BOOKING WITH ID : {selectedResourceId} - Start Date: {startDate}, End Date: {endDate}, Quantity: {quantity}");
+            showModal = true;
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            showModal = true; 
+            resultMsg = "Resource is already booked or does not have enough quantity. Please try again!";
+            Console.WriteLine(e.Message);
         }
-
-        CloseModal();
-        resultMsg = "Booking successful!";
+    }
+    
+    private void Proceed()
+    {
+        showModal = false;
+        navMgr.NavigateTo("/ViewBooking", forceLoad: true);
     }
 }

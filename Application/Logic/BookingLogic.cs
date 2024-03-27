@@ -23,23 +23,36 @@ namespace Application.Logic
         public async Task<BookingResponseDto> BookResourceAsync(BookingCreationDto bookingToCreate)
         {
             ValidateData(bookingToCreate);
-    
-            // Check if resource exists and has enough available quantity
+
+            // Check if the resource exists
             var resource = await resourceDao.GetResourceByIdAsync(bookingToCreate.ResourceId);
-            if (resource == null || resource.Quantity < bookingToCreate.BookedQuantity)
+            if (resource == null)
             {
-                throw new Exception("Resource is not available or does not have enough quantity.");
+                throw new Exception("Resource is not available.");
             }
-    
-            // Check for booking conflicts
+
+            // Fetch existing bookings for the resource that overlap with the requested booking period
             var existingBookings = await bookingDao.GetBookingsByResourceIdAsync(bookingToCreate.ResourceId);
-            // Assuming IsConflict is correctly defined to take IEnumerable<Booking>, DateOnly, and DateOnly as parameters
+            int bookedQuantityDuringPeriod = existingBookings
+                .Where(b => !(b.DateFrom > bookingToCreate.DateTo || b.DateTo < bookingToCreate.DateFrom))
+                .Sum(b => b.BookedQuantity);
+
+            // Calculate the available quantity during the requested period
+            int availableQuantityDuringPeriod = resource.Quantity - bookedQuantityDuringPeriod;
+
+            // If the requested quantity exceeds the available quantity, throw an exception
+            if (bookingToCreate.BookedQuantity > availableQuantityDuringPeriod)
+            {
+                throw new Exception("Requested quantity exceeds available quantity for the specified period.");
+            }
+
+            // Check for booking conflicts (this seems redundant with the above checks, unless there are other conflict criteria)
             if (BookingHelper.IsConflict(existingBookings, bookingToCreate.DateFrom, bookingToCreate.DateTo))
             {
                 throw new Exception("Resource is already booked for the requested period.");
             }
 
-    
+            // Proceed with creating the booking
             Booking toCreate = new Booking
             {
                 ResourceId = bookingToCreate.ResourceId,
