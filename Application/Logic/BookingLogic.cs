@@ -2,9 +2,6 @@ using Application.DaoInterfaces;
 using Application.LogicInterfaces;
 using Shared.DTOs;
 using Shared.Models;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Application.Shared;
 
 namespace Application.Logic
@@ -12,9 +9,9 @@ namespace Application.Logic
     public class BookingLogic : IBookingLogic
     {
         private readonly IBookingDao bookingDao;
-        private readonly IResourceDao resourceDao; // Added for resource validation
+        private readonly IResourceDao resourceDao; 
         
-        public BookingLogic(IBookingDao bookingDao, IResourceDao resourceDao) // Injecting IResourceDao
+        public BookingLogic(IBookingDao bookingDao, IResourceDao resourceDao) 
         {
             this.bookingDao = bookingDao;
             this.resourceDao = resourceDao;
@@ -23,38 +20,32 @@ namespace Application.Logic
     public async Task<BookingResponseDto> BookResourceAsync(BookingCreationDto bookingToCreate)
     {
     ValidateData(bookingToCreate);
-
-    // Check if the resource exists
+    
     var resource = await resourceDao.GetResourceByIdAsync(bookingToCreate.ResourceId);
     if (resource == null)
     {
         throw new Exception("Resource is not available.");
     }
-
-    // Fetch existing bookings for the resource that overlap with the requested booking period and materialize it to a List
+    
     var existingBookings = (await bookingDao.GetBookingsByResourceIdAsync(bookingToCreate.ResourceId)).ToList();
     
-    // Calculate the booked quantity during the requested period
     int bookedQuantityDuringPeriod = existingBookings
         .Where(b => !(b.DateFrom > bookingToCreate.DateTo || b.DateTo < bookingToCreate.DateFrom))
         .Sum(b => b.BookedQuantity);
 
-    // Calculate the available quantity during the requested period
+    
     int availableQuantityDuringPeriod = resource.Quantity - bookedQuantityDuringPeriod;
-
-    // If the requested quantity exceeds the available quantity, throw an exception
+    
     if (bookingToCreate.BookedQuantity > availableQuantityDuringPeriod)
     {
         throw new Exception("Requested quantity exceeds available quantity for the specified period.");
     }
-
-    // Check for booking conflicts considering the booked quantity and resource quantity
+    
     if (BookingHelper.IsConflict(existingBookings, bookingToCreate.DateFrom, bookingToCreate.DateTo, bookedQuantityDuringPeriod, resource.Quantity))
     {
         throw new Exception("Resource is already booked for the requested period.");
     }
-
-    // Proceed with creating the booking
+    
     Booking toCreate = new Booking
     {
         ResourceId = bookingToCreate.ResourceId,
@@ -75,8 +66,8 @@ namespace Application.Logic
 
 
         
-        public static void ValidateData(BookingCreationDto bookingToCreate)
-        {
+    public static void ValidateData(BookingCreationDto bookingToCreate)
+    {
             int resourceId = bookingToCreate.ResourceId;
             int bookedQuantity = bookingToCreate.BookedQuantity;
             DateOnly dateFrom = bookingToCreate.DateFrom;

@@ -13,21 +13,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b454f4d6-991d-4e59-97ba-79dcb649fc49" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/AddResource.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blazor/Pages/Index.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blazor/wwwroot/logo-no-background.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Simple_Booking_System/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Logic/BookingLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Logic/BookingLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Shared/BookingHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Shared/BookingHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Data/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Data/WeatherForecastService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Pages/Counter.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Pages/FetchData.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Pages/AddResource.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/AddResource.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blazor/Pages/ViewBooking.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/DTOs/BookingResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/DTOs/BookingResponseDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db" beforeDir="false" afterPath="$PROJECT_DIR$/EfcDataAccess/Booking.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EfcDataAccess/Booking.db-wal" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +206,7 @@
       <workItem from="1711490791048" duration="273000" />
       <workItem from="1711529019675" duration="5911000" />
       <workItem from="1711536814181" duration="2328000" />
+      <workItem from="1711539978361" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="Domain">
       <option name="closed" value="true" />
